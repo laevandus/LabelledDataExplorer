@@ -11,6 +11,7 @@ import SwiftUI
 
 struct ContentView: View {
     @State private var viewModel = ViewModel()
+    @Environment(ThemeManager.self) var manager
 
     var body: some View {
         ContentPrepareView {
@@ -20,6 +21,10 @@ struct ContentView: View {
                 }
                 .navigationTitle("Data Explorer")
                 .toolbar {
+                    // TODO: Create a settings view, this is for testing
+                    Button("Theme (debug)") {
+                        manager.current = Theme.allCases.randomElement()!
+                    }
                     EditButton()
                 }
             }

@@ -26,7 +26,6 @@ let package = Package(
             name: "APIServicesTests",
             dependencies: ["APIServices"],
             resources: [
-                .copy("ResponseJSONs/Details1.json"),
                 .copy("ResponseJSONs/LabelledDataResponse1.json")
             ]
         ),
