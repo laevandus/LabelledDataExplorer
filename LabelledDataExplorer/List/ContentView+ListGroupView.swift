@@ -15,7 +15,12 @@ extension ContentView {
         var body: some View {
             ForEach($items, editActions: .all) { $item in
                 if item.isLeaf {
-                    Text(item.label)
+                    NavigationLink {
+                        LabelledItemDetailsView(id: item.id)
+                    } label: {
+                        Text(item.label)
+                    }
+
                 } else {
                     DisclosureGroup(item.label) {
                         ListGroupView(items: $item.children)

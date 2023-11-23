@@ -29,9 +29,21 @@ public final class LabelledDataService {
         let endpoint = HTTPEndpoint<[LabelledItem]>(jsonResponseURL: url)
         return try await urlSession.loadEndpoint(endpoint)
     }
+
+    /// Fetches labelled item details for an id.
+    /// - Throws: An error with `HTTPEndpointError` type.
+    public func fetchLabelledItemDetails(for id: String) async throws -> LabelledItemDetails {
+        let url = baseURL.appending(path: "frontend-tha/entries/\(id).json")
+        let decoder = JSONDecoder()
+        decoder.dateDecodingStrategy = .iso8601FractionalSeconds
+        let endpoint = HTTPEndpoint<LabelledItemDetails>(jsonResponseURL: url, decoder: decoder)
+        return try await urlSession.loadEndpoint(endpoint)
+    }
 }
 
-public struct LabelledItem: Identifiable {
+// MARK: -
+
+public struct LabelledItem: Identifiable, Hashable {
     public let id: String
     public let label: String
     public var children: [LabelledItem]
@@ -65,4 +77,46 @@ extension LabelledItem: Decodable {
             id = label + UUID().uuidString
         }
     }
+}
+
+// MARK: -
+
+public struct LabelledItemDetails: Decodable, Identifiable {
+    public let id: String
+    public let createdAt: Date
+    public let createdBy: String
+    public let lastModifiedAt: Date?
+    public let lastModifiedBy: String?
+    public let description: String
+
+    public init(id: String, createdAt: Date, createdBy: String, lastModifiedAt: Date?, lastModifiedBy: String?, description: String) {
+        self.id = id
+        self.createdAt = createdAt
+        self.createdBy = createdBy
+        self.lastModifiedAt = lastModifiedAt
+        self.lastModifiedBy = lastModifiedBy
+        self.description = description
+    }
+}
+
+// MARK: -
+
+extension JSONDecoder.DateDecodingStrategy {
+    static let iso8601FractionalSeconds = custom {
+        try .init(iso8601FractionalSeconds: $0.singleValueContainer().decode(String.self))
+    }
+}
+
+extension Date {
+    init(iso8601FractionalSeconds parseInput: ParseStrategy.ParseInput) throws {
+        try self.init(parseInput, strategy: .iso8601FractionalSeconds)
+    }
+}
+
+extension ParseStrategy where Self == Date.ISO8601FormatStyle {
+    static var iso8601FractionalSeconds: Date.ISO8601FormatStyle { .iso8601FractionalSeconds }
+}
+
+extension Date.ISO8601FormatStyle {
+    static let iso8601FractionalSeconds: Self = .init(includingFractionalSeconds: true)
 }
