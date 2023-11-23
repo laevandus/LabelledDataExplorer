@@ -8,7 +8,7 @@
 import Foundation
 
 public protocol URLSessionEndpointLoading {
-    func loadEndpoint<ResponsePayload>(_ endpoint: HTTPEndpoint<ResponsePayload>) async throws -> ResponsePayload
+    func loadEndpoint<ResponsePayload: Decodable>(_ endpoint: HTTPEndpoint<ResponsePayload>) async throws -> ResponsePayload
 }
 
 extension URLSession: URLSessionEndpointLoading {

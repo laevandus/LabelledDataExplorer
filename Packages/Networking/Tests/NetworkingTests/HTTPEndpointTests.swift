@@ -5,8 +5,8 @@
 //  Created by Toomas Vahter on 23.11.2023.
 //
 
-import XCTest
 @testable import Networking
+import XCTest
 
 final class HTTPEndpointTests: XCTestCase {
     override func tearDownWithError() throws {
