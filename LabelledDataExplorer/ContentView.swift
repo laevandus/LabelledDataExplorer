@@ -5,17 +5,17 @@
 //  Created by Toomas Vahter on 23.11.2023.
 //
 
+import DesignSystem
 import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        ContentPrepareView {
+            Text("Success")
+        } task: {
+            try await Task.sleep(nanoseconds: 3_000_000_000)
         }
-        .padding()
+
     }
 }
 

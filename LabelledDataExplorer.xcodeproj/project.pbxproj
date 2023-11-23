@@ -14,6 +14,7 @@
 		C8F187512B0F3A380064FA73 /* LabelledDataExplorerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8F187502B0F3A380064FA73 /* LabelledDataExplorerTests.swift */; };
 		C8F1875B2B0F3A380064FA73 /* LabelledDataExplorerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8F1875A2B0F3A380064FA73 /* LabelledDataExplorerUITests.swift */; };
 		C8F1875D2B0F3A380064FA73 /* LabelledDataExplorerUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8F1875C2B0F3A380064FA73 /* LabelledDataExplorerUITestsLaunchTests.swift */; };
+		C8F187752B0F4E870064FA73 /* DesignSystem in Frameworks */ = {isa = PBXBuildFile; productRef = C8F187742B0F4E870064FA73 /* DesignSystem */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +49,7 @@
 		C8F1876C2B0F400B0064FA73 /* APIServices */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = APIServices; sourceTree = "<group>"; };
 		C8F1876D2B0F40630064FA73 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		C8F187712B0F4C610064FA73 /* TestPlan.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = TestPlan.xctestplan; sourceTree = "<group>"; };
+		C8F187722B0F4D1F0064FA73 /* DesignSystem */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = DesignSystem; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +57,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C8F187752B0F4E870064FA73 /* DesignSystem in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -84,6 +87,7 @@
 				C8F187592B0F3A380064FA73 /* LabelledDataExplorerUITests */,
 				C8F1876A2B0F3BC90064FA73 /* Packages */,
 				C8F1873D2B0F3A370064FA73 /* Products */,
+				C8F187732B0F4E870064FA73 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -138,9 +142,17 @@
 			isa = PBXGroup;
 			children = (
 				C8F1876C2B0F400B0064FA73 /* APIServices */,
+				C8F187722B0F4D1F0064FA73 /* DesignSystem */,
 				C8F1876B2B0F3BFC0064FA73 /* Networking */,
 			);
 			path = Packages;
+			sourceTree = "<group>";
+		};
+		C8F187732B0F4E870064FA73 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -159,6 +171,9 @@
 			dependencies = (
 			);
 			name = LabelledDataExplorer;
+			packageProductDependencies = (
+				C8F187742B0F4E870064FA73 /* DesignSystem */,
+			);
 			productName = LabelledDataExplorer;
 			productReference = C8F1873C2B0F3A370064FA73 /* LabelledDataExplorer.app */;
 			productType = "com.apple.product-type.application";
@@ -604,6 +619,13 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		C8F187742B0F4E870064FA73 /* DesignSystem */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = DesignSystem;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = C8F187342B0F3A370064FA73 /* Project object */;
 }
