@@ -5,8 +5,8 @@
 //  Created by Toomas Vahter on 23.11.2023.
 //
 
-import XCTest
 @testable import LabelledDataExplorer
+import XCTest
 
 final class LabelledDataExplorerTests: XCTestCase {
 
