@@ -1,0 +1,38 @@
+{
+  "configurations" : [
+    {
+      "id" : "6FD28CBF-6C61-4795-B475-08D40C858537",
+      "name" : "Configuration 1",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:Packages\/APIServices",
+        "identifier" : "APIServicesTests",
+        "name" : "APIServicesTests"
+      }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:LabelledDataExplorer.xcodeproj",
+        "identifier" : "C8F1874B2B0F3A380064FA73",
+        "name" : "LabelledDataExplorerTests"
+      }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:Packages\/Networking",
+        "identifier" : "NetworkingTests",
+        "name" : "NetworkingTests"
+      }
+    }
+  ],
+  "version" : 1
+}

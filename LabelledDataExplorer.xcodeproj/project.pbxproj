@@ -47,6 +47,7 @@
 		C8F1876B2B0F3BFC0064FA73 /* Networking */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Networking; sourceTree = "<group>"; };
 		C8F1876C2B0F400B0064FA73 /* APIServices */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = APIServices; sourceTree = "<group>"; };
 		C8F1876D2B0F40630064FA73 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		C8F187712B0F4C610064FA73 /* TestPlan.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = TestPlan.xctestplan; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +120,7 @@
 			isa = PBXGroup;
 			children = (
 				C8F187502B0F3A380064FA73 /* LabelledDataExplorerTests.swift */,
+				C8F187712B0F4C610064FA73 /* TestPlan.xctestplan */,
 			);
 			path = LabelledDataExplorerTests;
 			sourceTree = "<group>";
