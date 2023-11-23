@@ -34,7 +34,11 @@ public final class LabelledDataService {
 public struct LabelledItem: Identifiable {
     public let id: String
     public let label: String
-    public let children: [LabelledItem]?
+    public var children: [LabelledItem]
+
+    public var isLeaf: Bool {
+        children.isEmpty
+    }
 }
 
 extension LabelledItem: Decodable {
@@ -47,14 +51,18 @@ extension LabelledItem: Decodable {
     public init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: CodingKeys.self)
         label = try values.decode(String.self, forKey: .label)
-        children = try? values.decode([LabelledItem].self, forKey: .children)
+        if let children = try? values.decode([LabelledItem].self, forKey: .children) {
+            self.children = children
+        } else {
+            self.children = []
+        }
 
         if let identifier = try? values.decode(String.self, forKey: .id) {
             id = identifier
         }
         else {
             // TODO: We could have multiple items with the same label (theoretically)
-            id = label
+            id = label + UUID().uuidString
         }
     }
 }

@@ -14,8 +14,14 @@ struct ContentView: View {
 
     var body: some View {
         ContentPrepareView {
-            List(viewModel.items, children: \.children) { item in
-                Text(item.label)
+            NavigationStack {
+                List {
+                    ListGroupView(items: $viewModel.items)
+                }
+                .navigationTitle("Data Explorer")
+                .toolbar {
+                    EditButton()
+                }
             }
         } task: {
             try await viewModel.prepare()
@@ -25,7 +31,7 @@ struct ContentView: View {
 
 extension ContentView {
     @Observable final class ViewModel {
-        private(set) var items = [LabelledItem]()
+        var items = [LabelledItem]()
         let service: LabelledDataService
 
         init(service: LabelledDataService = LabelledDataService(baseURL: AppConstants.URLs.labelledDataBaseURL)) {

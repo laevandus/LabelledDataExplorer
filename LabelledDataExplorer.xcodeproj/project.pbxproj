@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		C874D1CC2B0F52C300E3DD0F /* APIServices in Frameworks */ = {isa = PBXBuildFile; productRef = C874D1CB2B0F52C300E3DD0F /* APIServices */; };
+		C874D1CE2B0F64AD00E3DD0F /* ContentView+ListGroupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C874D1CD2B0F64AD00E3DD0F /* ContentView+ListGroupView.swift */; };
 		C8F187402B0F3A370064FA73 /* LabelledDataExplorerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8F1873F2B0F3A370064FA73 /* LabelledDataExplorerApp.swift */; };
 		C8F187422B0F3A370064FA73 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8F187412B0F3A370064FA73 /* ContentView.swift */; };
 		C8F187442B0F3A380064FA73 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C8F187432B0F3A380064FA73 /* Assets.xcassets */; };
@@ -37,6 +38,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C874D1CD2B0F64AD00E3DD0F /* ContentView+ListGroupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ContentView+ListGroupView.swift"; sourceTree = "<group>"; };
 		C8F1873C2B0F3A370064FA73 /* LabelledDataExplorer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LabelledDataExplorer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C8F1873F2B0F3A370064FA73 /* LabelledDataExplorerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelledDataExplorerApp.swift; sourceTree = "<group>"; };
 		C8F187412B0F3A370064FA73 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -82,6 +84,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C874D1CF2B0F64CB00E3DD0F /* App */ = {
+			isa = PBXGroup;
+			children = (
+				C8F187762B0F51610064FA73 /* AppConstants.swift */,
+				C8F187432B0F3A380064FA73 /* Assets.xcassets */,
+				C8F1873F2B0F3A370064FA73 /* LabelledDataExplorerApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		C874D1D02B0F64E300E3DD0F /* List */ = {
+			isa = PBXGroup;
+			children = (
+				C8F187412B0F3A370064FA73 /* ContentView.swift */,
+				C874D1CD2B0F64AD00E3DD0F /* ContentView+ListGroupView.swift */,
+			);
+			path = List;
+			sourceTree = "<group>";
+		};
 		C8F187332B0F3A370064FA73 = {
 			isa = PBXGroup;
 			children = (
@@ -108,10 +129,8 @@
 		C8F1873E2B0F3A370064FA73 /* LabelledDataExplorer */ = {
 			isa = PBXGroup;
 			children = (
-				C8F187762B0F51610064FA73 /* AppConstants.swift */,
-				C8F187432B0F3A380064FA73 /* Assets.xcassets */,
-				C8F187412B0F3A370064FA73 /* ContentView.swift */,
-				C8F1873F2B0F3A370064FA73 /* LabelledDataExplorerApp.swift */,
+				C874D1CF2B0F64CB00E3DD0F /* App */,
+				C874D1D02B0F64E300E3DD0F /* List */,
 				C8F187452B0F3A380064FA73 /* Preview Content */,
 			);
 			path = LabelledDataExplorer;
@@ -297,6 +316,7 @@
 				C8F187422B0F3A370064FA73 /* ContentView.swift in Sources */,
 				C8F187772B0F51610064FA73 /* AppConstants.swift in Sources */,
 				C8F187402B0F3A370064FA73 /* LabelledDataExplorerApp.swift in Sources */,
+				C874D1CE2B0F64AD00E3DD0F /* ContentView+ListGroupView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
