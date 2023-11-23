@@ -44,6 +44,7 @@
 		C8F187562B0F3A380064FA73 /* LabelledDataExplorerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LabelledDataExplorerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C8F1875A2B0F3A380064FA73 /* LabelledDataExplorerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelledDataExplorerUITests.swift; sourceTree = "<group>"; };
 		C8F1875C2B0F3A380064FA73 /* LabelledDataExplorerUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelledDataExplorerUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		C8F1876B2B0F3BFC0064FA73 /* Networking */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Networking; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +78,7 @@
 				C8F1873E2B0F3A370064FA73 /* LabelledDataExplorer */,
 				C8F1874F2B0F3A380064FA73 /* LabelledDataExplorerTests */,
 				C8F187592B0F3A380064FA73 /* LabelledDataExplorerUITests */,
+				C8F1876A2B0F3BC90064FA73 /* Packages */,
 				C8F1873D2B0F3A370064FA73 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -125,6 +127,14 @@
 				C8F1875C2B0F3A380064FA73 /* LabelledDataExplorerUITestsLaunchTests.swift */,
 			);
 			path = LabelledDataExplorerUITests;
+			sourceTree = "<group>";
+		};
+		C8F1876A2B0F3BC90064FA73 /* Packages */ = {
+			isa = PBXGroup;
+			children = (
+				C8F1876B2B0F3BFC0064FA73 /* Networking */,
+			);
+			path = Packages;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
