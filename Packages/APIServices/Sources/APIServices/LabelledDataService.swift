@@ -31,10 +31,30 @@ public final class LabelledDataService {
     }
 }
 
-extension LabelledDataService {
-    public struct LabelledItem: Decodable {
-        let id: String?
-        let label: String
-        let children: [LabelledItem]?
+public struct LabelledItem: Identifiable {
+    public let id: String
+    public let label: String
+    public let children: [LabelledItem]?
+}
+
+extension LabelledItem: Decodable {
+    enum CodingKeys: String, CodingKey {
+        case id
+        case label
+        case children
+    }
+
+    public init(from decoder: Decoder) throws {
+        let values = try decoder.container(keyedBy: CodingKeys.self)
+        label = try values.decode(String.self, forKey: .label)
+        children = try? values.decode([LabelledItem].self, forKey: .children)
+
+        if let identifier = try? values.decode(String.self, forKey: .id) {
+            id = identifier
+        }
+        else {
+            // TODO: We could have multiple items with the same label (theoretically)
+            id = label
+        }
     }
 }

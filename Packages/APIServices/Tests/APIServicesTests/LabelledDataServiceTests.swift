@@ -19,7 +19,7 @@ final class LabelledDataServiceTests: XCTestCase {
         XCTAssertEqual(result.count, 2)
         XCTAssertEqual(result.map(\.label).sorted(), ["9elements", "img.ly"])
 
-        let thirdLevelChildren: [LabelledDataService.LabelledItem]? = result
+        let thirdLevelChildren: [LabelledItem]? = result
             .first(where: { $0.label == "img.ly" })?.children?
             .first(where: { $0.label == "Workspace B" })?.children?
             .first(where: { $0.label == "Entry 3" })?.children
